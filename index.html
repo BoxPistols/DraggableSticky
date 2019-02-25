@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css'>
   <link rel="stylesheet" href="css/style.css">
   <title>Stickey localStorage</title>
@@ -13,13 +14,20 @@
 <body>
 
   <select id="color">
-    <option value="#ffc">黄色</option>
-    <option value="#fcc">赤色</option>
-    <option value="#cfc">緑色</option>
+    <option value="#fbfba8">Yellow</option>
+    <option value="#ffd9de">Pink</option>
+    <option value="#acffc3">Green</option>
+    <option value="#fdbd43">Orange</option>
+    <option value="">Clear Color</option>
   </select>
 
-  <input id="new" type="button" value="新規作成">
-  <input id="del" type="button" value="削除">
+  <select id="ht">
+    <option value="70px">Slim</option>
+    <option value="180px">Square</option>
+  </select>
+
+  <input id="new" class="button button-outline" value="新規作成">
+  <input id="del" class="button button-outline" value="削除">
 
   <script src='https://code.jquery.com/jquery-1.7.1.min.js'></script>
   <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'></script>

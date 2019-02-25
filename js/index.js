@@ -9,23 +9,36 @@ $(function() {
     save();
   });
 
+  window.addEventListener("keydown", handleKeydown);
+
+  function handleKeydown(event) {
+    var keyCode = event.keyCode;
+    if (keyCode == 8) {
+      $('.selected').remove();
+      save();
+    }
+  };
+
   function make() {
     var sticky = $('<div class="sticky">Drag & Double Click!</div>');
     sticky.appendTo('body')
       .css('background-color', $('#color').val())
-      .draggable({stop: save})
+      .css('height', $('#ht').val())
+      .draggable({
+        stop: save
+      })
       .dblclick(function() {
-      $(this).html('<textarea>' + $(this).html() + '</textarea>')
-        .children()
-        .focus()
-        .blur(function() {
-        $(this).parent().html($(this).val());
-        save();
+        $(this).html('<textarea>' + $(this).html() + '</textarea>')
+          .children()
+          .focus()
+          .blur(function() {
+            $(this).parent().html($(this).val());
+            save();
+          });
+      }).mousedown(function() {
+        $('.sticky').removeClass('selected');
+        $(this).addClass('selected');
       });
-    }).mousedown(function() {
-      $('.sticky').removeClass('selected');
-      $(this).addClass('selected');
-    });
     return sticky;
   }
 
