@@ -13,21 +13,26 @@
 
 <body>
 
-  <select id="color">
-    <option value="#fbfba8">Yellow</option>
-    <option value="#ffd9de">Pink</option>
-    <option value="#acffc3">Green</option>
-    <option value="#fdbd43">Orange</option>
-    <option value="">Clear Color</option>
-  </select>
+  <div class="navArea">
+    <select id="color">
+      <option value="#fbfba8">Yellow</option>
+      <option value="#ffd9de">Pink</option>
+      <option value="#c5f1ff">Blue</option>
+      <option value="#acffc3">Green</option>
+      <option value="#fdbd43">Orange</option>
+      <option value="">Clear</option>
+    </select>
 
-  <select id="ht">
-    <option value="70px">Slim</option>
-    <option value="180px">Square</option>
-  </select>
+    <select id="ht">
+      <option class="slim" value="70px">Slim</option>
+      <option class="large" value="180px">Square</option>
+    </select>
 
-  <input id="new" class="button button-outline" value="新規作成">
-  <input id="del" class="button button-outline" value="削除">
+    <button id="new" class="button button-outline" value="新規作成">新規作成</button>
+    <button id="del" class="button button-outline" value="削除">選択中の付箋を削除</button>
+    <button id="clear" class="button button-outline" value="全削除">すべて削除する</button>
+
+
 
   <script src='https://code.jquery.com/jquery-1.7.1.min.js'></script>
   <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'></script>

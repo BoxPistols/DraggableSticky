@@ -9,15 +9,34 @@ $(function() {
     save();
   });
 
-  window.addEventListener("keydown", handleKeydown);
+  $('#clear').click(function() {
+    // localStorage.clear();
+    $('sticky').val('');
+    localStorage.removeItem('sticky');
+    location.reload();
+  });
 
-  function handleKeydown(event) {
-    var keyCode = event.keyCode;
-    if (keyCode == 8) {
-      $('.selected').remove();
-      save();
+
+  // alert( localStorage.length );
+
+  // window.addEventListener("keydown", handleKeydown);
+  //
+  // function handleKeydown(event) {
+  //   var keyCode = event.keyCode;
+  //   if (keyCode == 8 + 91) {
+  //     $('.selected').remove();
+  //     save();
+  //   }
+  // };
+
+  $(window).keydown(function(e) {
+    if (event.shiftKey) {
+      if (e.keyCode === 8) {
+        $('.selected').remove();
+        save();
+      }
     }
-  };
+  });
 
   function make() {
     var sticky = $('<div class="sticky">Drag & Double Click!</div>');
