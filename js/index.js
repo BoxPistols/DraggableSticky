@@ -9,6 +9,11 @@ $(function() {
     save();
   });
 
+  // $('.close').click(function() {
+  //   $('.selected').remove();
+  //   save();
+  // });
+
   $('#clear').click(function() {
     // localStorage.clear();
     $('sticky').val('');
@@ -39,7 +44,7 @@ $(function() {
   });
 
   function make() {
-    var sticky = $('<div class="sticky">Drag & Double Click!</div>');
+    var sticky = $('<div class="sticky">Drag & Double Click!');
     sticky.appendTo('body')
       .css('background-color', $('#color').val())
       .css('height', $('#ht').val())
@@ -47,7 +52,7 @@ $(function() {
         stop: save
       })
       .dblclick(function() {
-        $(this).html('<textarea>' + $(this).html() + '</textarea>')
+        $(this).html('<textarea class="makeText">' + $(this).html() + '</textarea>')
           .children()
           .focus()
           .blur(function() {
@@ -68,7 +73,8 @@ $(function() {
         css: {
           left: $(this).css('left'),
           top: $(this).css('top'),
-          backgroundColor: $(this).css('background-color')
+          backgroundColor: $(this).css('background-color'),
+          height: $(this).css('height')
         },
         html: $(this).html()
       });
