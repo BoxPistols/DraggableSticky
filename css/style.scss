@@ -1,5 +1,6 @@
 body {
   background: linear-gradient(-45deg, rgba(229, 93, 135, 0.7), rgba(95, 195, 228, 0.7)), url("https://goo.gl/LqKys6") center center / cover no-repeat;
+  // background: linear-gradient(135deg, rgba(173, 58, 96, 0.75), rgba(65, 155, 185, 0.84));
   min-height: 100vh;
 }
 
@@ -20,9 +21,8 @@ textarea {
 }
 
 .selected,
-.sticky,
-textarea {
-  border-radius: 3px;
+.sticky {
+  border-radius: 0 15px 0 15px;
   min-height: 50px;
   max-height: 200px;
   width: 280px;
@@ -34,10 +34,40 @@ textarea {
   color: #234;
   overflow-y: scroll;
   padding: 5px 10px;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 4px #444;
+  transition: 0.5s;
+  white-space: pre-wrap;
+
+  &:hover {
+    opacity: 0.95;
+    border-width: 2px;
+  }
 
   textarea {
     max-width: 260px;
     overflow: hidden;
     border: none;
+    min-height: 50px;
+    max-height: 200px;
+    width: 280px;
+    // width: 100%;
+    height: auto;
+    padding: 5px 10px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #234;
+    overflow-y: scroll;
+    padding: 5px 10px;
+    // transition: 0.5s;
   }
+}
+
+select {
+  // background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 38 24" width="29"><path fill="#d1d1d1" d="M9.37727 3.625l5.08154 6.93523L19.54036 3.625"/></svg>') center right no-repeat;
+  background-size: contain;
+  padding-right: 3.0rem;
+  width: 200px;
+  font-size: 1.8rem;
+  color: #FFF;
 }

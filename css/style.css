@@ -16,9 +16,8 @@ textarea {
   border: 2px solid darkorange; }
 
 .selected,
-.sticky,
-textarea {
-  border-radius: 3px;
+.sticky {
+  border-radius: 0 15px 0 15px;
   min-height: 50px;
   max-height: 200px;
   width: 280px;
@@ -28,12 +27,36 @@ textarea {
   font-size: 18px;
   color: #234;
   overflow-y: scroll;
-  padding: 5px 10px; }
+  padding: 5px 10px;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 4px #444;
+  transition: 0.5s;
+  white-space: pre-wrap; }
+  .selected:hover,
+  .sticky:hover {
+    opacity: 0.95;
+    border-width: 2px; }
   .selected textarea,
-  .sticky textarea,
-  textarea textarea {
+  .sticky textarea {
     max-width: 260px;
     overflow: hidden;
-    border: none; }
+    border: none;
+    min-height: 50px;
+    max-height: 200px;
+    width: 280px;
+    height: auto;
+    padding: 5px 10px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #234;
+    overflow-y: scroll;
+    padding: 5px 10px; }
+
+select {
+  background-size: contain;
+  padding-right: 3.0rem;
+  width: 200px;
+  font-size: 1.8rem;
+  color: #FFF; }
 
 /*# sourceMappingURL=style.css.map */
