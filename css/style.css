@@ -1,23 +1,20 @@
 body {
-  background: linear-gradient(-45deg, rgba(229, 93, 135, 0.7), rgba(95, 195, 228, 0.7)), url(https://goo.gl/LqKys6) center center/cover no-repeat;
-  min-height: 100vh;
-}
+  background: linear-gradient(-45deg, rgba(229, 93, 135, 0.7), rgba(95, 195, 228, 0.7)), url("https://goo.gl/LqKys6") center center/cover no-repeat;
+  min-height: 100vh; }
 
 .sticky {
   position: absolute;
   cursor: pointer;
   border: 1px solid #aaa;
-  opacity: 0.8;
-}
+  opacity: 0.8; }
 
+a
 textarea {
   width: 100%;
-  height: 100%;
-}
+  height: 100%; }
 
 .selected {
-  border: 2px solid darkorange;
-}
+  border: 2px solid darkorange; }
 
 .selected,
 .sticky,
@@ -32,13 +29,12 @@ textarea {
   font-size: 18px;
   color: #234;
   overflow-y: scroll;
-  padding: 5px 10px;
-}
+  padding: 5px 10px; }
+  .selected textarea,
+  .sticky textarea,
+  textarea textarea {
+    max-width: 260px;
+    overflow: hidden;
+    border: none; }
 
-.selected textarea,
-.sticky textarea,
-textarea textarea {
-  max-width: 260px;
-  overflow: hidden;
-  border: none;
-}
+/*# sourceMappingURL=style.css.map */
