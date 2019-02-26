@@ -9,11 +9,6 @@ $(function() {
     save();
   });
 
-  // $('.close').click(function() {
-  //   $('.selected').remove();
-  //   save();
-  // });
-
   $('#clear').click(function() {
     // localStorage.clear();
     $('sticky').val('');
@@ -21,8 +16,8 @@ $(function() {
     location.reload();
   });
 
+  // $(".view").html(localStorage.key('sticky').length);
 
-  // alert( localStorage.length );
 
   window.addEventListener("keydown", handleKeydown);
 
@@ -51,18 +46,9 @@ $(function() {
       .draggable({
         stop: save
       })
-
       .dblclick(function() {
-
-        if ($(this).find('textarea')) {
-
-          // setTimeout(function() {
-          //   $(this).html('write..').fadeIn();
-          // },  3000)
-
+        if ($(this).find('textarea.makeText')) {
           $(this).html('')
-
-
           $(this).html('<textarea class="makeText">' + $(this).html() + '</textarea>')
             .children()
             .focus()
@@ -70,23 +56,14 @@ $(function() {
               $(this).parent().html($(this).val());
               save();
             });
-          // return false
         } else {
-
-          // $(this).html('<textarea class="makeText">' + $(this).html() + '</textarea>')
-          //   .children()
-          //   .focus()
-          //   .blur(function() {
-          //     $(this).parent().html($(this).val());
-          //     save();
-          //   });
-
+          return false
         }
-
       }).mousedown(function() {
         $('.sticky').removeClass('selected');
         $(this).addClass('selected');
       });
+
     return sticky;
   }
 
@@ -104,6 +81,11 @@ $(function() {
       });
     });
     localStorage.sticky = JSON.stringify(items);
+
+    //Count
+    var cnt = $(items).length;
+    $(".view").html(cnt);
+
   }
 
   function load() {
@@ -111,6 +93,11 @@ $(function() {
     var items = JSON.parse(localStorage.sticky);
     $.each(items, function(i, item) {
       make().css(item.css).html(item.html);
+
+      //Count
+      var cnt = $(items).length;
+      $(".view").html(cnt);
+
     });
   }
   load();

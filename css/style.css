@@ -201,4 +201,23 @@ textarea.makeText {
 .sticky.ui-draggable.selected:hover, .sticky.ui-draggable:hover {
   box-shadow: 4px 4px 8px #333; }
 
+.count {
+  align-self: flex-start; }
+  .count .nums {
+    font-size: 0.8em;
+    margin-left: 5px; }
+  .count .view {
+    color: #000;
+    display: inline-block;
+    margin-left: 15px;
+    opacity: 0.7;
+    font-weight: 400;
+    border: 1px solid #000;
+    font-size: 1.25em;
+    width: 1.8em;
+    height: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
 /*# sourceMappingURL=style.css.map */
