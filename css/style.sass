@@ -163,7 +163,8 @@ textarea
 .selected:hover,
 .sticky:hover
   opacity: 0.95
-  border-width: 2px
+  border-width: 3px
+  box-shadow: 4px 4px 6px #333
 
 .selected textarea,
 .sticky textarea
@@ -201,3 +202,6 @@ select
 
 textarea.makeText
   height: 95%
+
+.sticky.ui-draggable.selected:hover, .sticky.ui-draggable:hover
+  box-shadow: 4px 4px 8px #333

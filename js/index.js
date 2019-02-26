@@ -9,6 +9,10 @@ $(function() {
     save();
   });
 
+  // $('.close').click(function() {
+  //   $('.selected').remove();
+  //   save();
+  // });
 
   $('#clear').click(function() {
     // localStorage.clear();
@@ -20,8 +24,8 @@ $(function() {
 
   // alert( localStorage.length );
 
-  // window.addEventListener("keydown", handleKeydown);
-  //
+  window.addEventListener("keydown", handleKeydown);
+
   function handleKeydown(event) {
     var keyCode = event.keyCode;
     if (keyCode == 8 + 91) {
@@ -47,14 +51,38 @@ $(function() {
       .draggable({
         stop: save
       })
+
       .dblclick(function() {
-        $(this).html('<textarea class="makeText">' + $(this).html() + '</textarea>')
-          .children()
-          .focus()
-          .blur(function() {
-            $(this).parent().html($(this).val());
-            save();
-          });
+
+        if ($(this).find('textarea')) {
+
+          // setTimeout(function() {
+          //   $(this).html('write..').fadeIn();
+          // },  3000)
+
+          $(this).html('')
+
+
+          $(this).html('<textarea class="makeText">' + $(this).html() + '</textarea>')
+            .children()
+            .focus()
+            .blur(function() {
+              $(this).parent().html($(this).val());
+              save();
+            });
+          // return false
+        } else {
+
+          // $(this).html('<textarea class="makeText">' + $(this).html() + '</textarea>')
+          //   .children()
+          //   .focus()
+          //   .blur(function() {
+          //     $(this).parent().html($(this).val());
+          //     save();
+          //   });
+
+        }
+
       }).mousedown(function() {
         $('.sticky').removeClass('selected');
         $(this).addClass('selected');
