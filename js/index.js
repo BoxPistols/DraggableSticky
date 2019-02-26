@@ -44,7 +44,7 @@ $(function() {
   });
 
   function make() {
-    var sticky = $('<div class="sticky">Drag & Double Click!');
+    var sticky = $('<div class="sticky">Drag & Double Click!</div>');
     sticky.appendTo('body')
       .css('background-color', $('#color').val())
       .css('height', $('#ht').val())
