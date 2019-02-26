@@ -51,23 +51,67 @@ $(function() {
       .draggable({
         stop: save
       })
+      // .dblclick(function() {
+      //   $(this).html('<textarea class="makeText">' + $(this).html() + '</textarea>')
+      //     .children()
+      //     .focus()
+      //     .blur(function() {
+      //       $(this).parent().html($(this).val());
+      //       save();
+      //     });
+      // })
+      $(".sticky").data("dblTap",false).click(function(){
+        if($(this).data("dblTap")){
+          //ダブルタップ時の命令
+          console.log("ダブルタップ");
+          $(this).data("dblTap",false);
 
-      .dblclick(function() {
-        $(this).html('');
+          $('.sticky').removeClass('selected');
 
-        $(this).html('<textarea class="makeText">' + $(this).html() + '</textarea>')
-          .children()
-          .focus()
-          .blur(function() {
-            $(this).parent().html($(this).val());
-            save();
-          });
-      }).mousedown(function() {
-        $('.sticky').removeClass('selected');
-        $(this).addClass('selected');
-      });
+           $(this).addClass('selected');
+
+           $(this).html('<textarea class="makeText">' + $(this).html() + '</textarea>')
+             .children()
+             .focus()
+             .blur(function() {
+               $(this).parent().html($(this).val());
+               save();
+             });
+
+        }else{
+          $(this).data("dblTap",true);
+
+          $('.sticky').removeClass('selected');
+          
+        }
+        setTimeout(function(){
+          $(".sticky").data("dblTap",false);
+
+          $('.sticky').removeClass('selected');
+
+        },500);
+      })
+
+      // .mousedown(function() {
+      //   $('.sticky').removeClass('selected');
+      //   $(this).addClass('selected');
+      // });
     return sticky;
   }
+
+// FIXME
+  // $(."sticky").data("dblTap",false).click(function(){
+  // 	if($(this).data("dblTap")){
+  // 		//ダブルタップ時の命令
+  // 		console.log("ダブルタップ");
+  // 		$(this).data("dblTap",false);
+  // 	}else{
+  // 		$(this).data("dblTap",true);
+  // 	}
+  // 	setTimeout(function(){
+  // 		$(".sticky").data("dblTap",false);
+  // 	},500);
+  // })
 
   function save() {
     var items = [];
