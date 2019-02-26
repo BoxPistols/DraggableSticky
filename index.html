@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +8,12 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css'>
   <link rel="stylesheet" href="css/style.css">
   <title>Stickey localStorage</title>
+
 </head>
 
 <body>
 
-  <div class="navArea">
+  <div class="navArea smallDevice-none">
     <!-- <h1>貼付け地獄</h1> -->
     <h1><span class="h-p">P</span>ost-<span class="h-i">ito</span></h1>
     <!-- <h2>偶然の一致</h2> -->
@@ -61,10 +61,32 @@
 
   </div>
 
+  <div class="mobile-info smallDevice-block pc-none">
+    <h2>Post-it</h2>
+    <p>現在モバイル対応は制作中になります</p>
+    <p>PCでお使いください(Mac&Chrome推奨)</p>
+    <p class="ta-c"><a href="https://xn--wckt73v.com/">ザ脳.com</a></p>
+  </div>
+  <!-- /.info -->
+
+
   <script src='https://code.jquery.com/jquery-1.7.1.min.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js'></script>
   <script src="js/index.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      var ua = navigator.userAgent;
+      if (ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) {
+        $('body').addClass('mobile smallDevice');
+      } else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
+        $('body').addClass('tablet smallDevice');
+      } else {
+        $('body').addClass('pc');
+      }
+    })
+  </script>
 </body>
 
 </html>

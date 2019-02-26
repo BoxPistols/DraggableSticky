@@ -20,6 +20,50 @@ select {
     outline: 0;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 29 14" width="29"><path fill="#9b4dca" d="M9.37727 3.625l5.08154 6.93523L19.54036 3.625"/></svg>'); }
 
+.ta-c {
+  text-align: center; }
+
+.ta-r {
+  text-align: right; }
+
+.pc-none {
+  display: none; }
+
+.pc-block {
+  display: block; }
+
+body.smallDevice {
+  max-height: 100vh;
+  overflow: hidden; }
+  body.smallDevice .smallDevice-none {
+    display: none; }
+  body.smallDevice .smallDevice-block {
+    display: block; }
+  body.smallDevice .mobile-info {
+    padding: 40px 10px;
+    color: white; }
+    body.smallDevice .mobile-info p {
+      margin: 5px;
+      line-height: 1.5; }
+      body.smallDevice .mobile-info p a {
+        color: white;
+        text-decoration: underline;
+        line-height: 2; }
+    body.smallDevice .mobile-info h2 {
+      font-family: "Archivo Black", sans-serif;
+      font-weight: 400;
+      font-size: 2.2em;
+      display: block;
+      background: rgba(247, 210, 0, 0.7);
+      color: black;
+      padding: 2px 11px 2px;
+      letter-spacing: -1px;
+      border-radius: 0px 10px 0px 10px;
+      border: 2px solid #333;
+      transform: scale(1, 1.03);
+      box-shadow: 4px 4px 0 #111;
+      width: 150px; }
+
 body {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   height: 100%;

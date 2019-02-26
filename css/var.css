@@ -1,3 +1,13 @@
+.ta-c {
+  text-align: center; }
 
+.ta-r {
+  text-align: right; }
+
+.pc-none {
+  display: none; }
+
+.pc-block {
+  display: block; }
 
 /*# sourceMappingURL=var.css.map */
