@@ -9,10 +9,6 @@ $(function() {
     save();
   });
 
-  // $('.close').click(function() {
-  //   $('.selected').remove();
-  //   save();
-  // });
 
   $('#clear').click(function() {
     // localStorage.clear();
@@ -26,13 +22,13 @@ $(function() {
 
   // window.addEventListener("keydown", handleKeydown);
   //
-  // function handleKeydown(event) {
-  //   var keyCode = event.keyCode;
-  //   if (keyCode == 8 + 91) {
-  //     $('.selected').remove();
-  //     save();
-  //   }
-  // };
+  function handleKeydown(event) {
+    var keyCode = event.keyCode;
+    if (keyCode == 8 + 91) {
+      $('.selected').remove();
+      save();
+    }
+  };
 
   $(window).keydown(function(e) {
     if (event.shiftKey) {
@@ -51,10 +47,7 @@ $(function() {
       .draggable({
         stop: save
       })
-
       .dblclick(function() {
-        $(this).html('');
-
         $(this).html('<textarea class="makeText">' + $(this).html() + '</textarea>')
           .children()
           .focus()
