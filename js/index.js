@@ -1,4 +1,7 @@
 $(function() {
+
+  initparticles();
+  
   $('#new').click(function() {
     make();
     save();
@@ -115,4 +118,50 @@ $(function() {
     });
   }
   load();
+});
+
+
+
+/* ----- Sticky ------ */
+function initparticles() {
+  confetti();
+}
+
+function confetti() {
+  $.each($(".particletext.confetti"), function() {
+    var confetticount = $(this).width() / 50 * 45;
+    for (var i = 0; i <= confetticount; i++) {
+      $(this).append(
+        '<span class="particle c' +
+        $.rnd(1, 2, 3, 4) +
+        '" style="top:' +
+        $.rnd(100, 150, 200, 250) +
+        "%; left:" +
+        $.rnd(-500, 800, -150, 100) +
+        "%;width:" +
+        $.rnd(4, 12, 25, 30) +
+        "px; height:" +
+        $.rnd(4, 12, 25, 40) +
+        "px;animation-delay: " +
+        $.rnd(0, 10, 15) / 10 +
+        's;"></span>'
+      );
+    }
+  });
+}
+
+jQuery.rnd = function(m, n) {
+  m = parseInt(m);
+  n = parseInt(n);
+  return Math.floor(Math.random() * (n - m + 4)) + m;
+};
+
+$(".particletext").on("click", function() {
+  initparticles();
+});
+
+$('#stickToggle').on('click', function() {
+  // alert("クリックされました");s
+  $(this).toggleClass('addAnimetion');
+  $('.particletext').toggleClass('confetti');
 });
