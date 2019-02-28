@@ -9,12 +9,26 @@ $(function() {
     save();
   });
 
-  $('#clear').click(function() {
-    // localStorage.clear();
-    $('sticky').val('');
-    localStorage.removeItem('sticky');
-    location.reload();
+  // $('#clear').click(function() {
+  //   // localStorage.clear();
+  //   $('sticky').val('');
+  //   localStorage.removeItem('sticky');
+  //   location.reload();
+  // });
+
+  $("#clear").click(function() {
+    var retVal = confirm("完全に消去されます。全データ消去しますか? ");
+    if (retVal == true) {
+      localStorage.clear();
+      $('sticky').val('');
+      localStorage.removeItem('sticky');
+      alert("削除しました");
+      location.reload();
+    } else {
+      return false;
+    }
   });
+
 
   // $(".view").html(localStorage.key('sticky').length);
 
