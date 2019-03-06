@@ -167,13 +167,22 @@ body {
       color: #222;
       border-color: #333;
       background-color: rgba(255, 255, 255, 0.24); }
+  .navArea .button, .navArea input[type='button'] {
+    background-color: rgba(200, 200, 200, 0.5);
+    border: 0.1rem solid #9b4dca;
+    border-radius: 0.4rem;
+    color: #222;
+    border: 1px solid #fff; }
+    .navArea .button#del, .navArea .button#clear, .navArea input[type='button']#del, .navArea input[type='button']#clear {
+      color: white; }
   .navArea .buttons {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    color: #fff; }
     .navArea .buttons .att {
       font-size: 0.8em;
       text-align: center;
-      color: white;
+      color: whitesass;
       margin: -5px 0 0 0;
       line-height: 1.2; }
   .navArea button#new {

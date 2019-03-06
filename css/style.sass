@@ -1,3 +1,7 @@
+
+
+
+
 @charset "UTF-8"
 
 @import milligram
@@ -22,6 +26,8 @@ body
   padding: 10px 20px 10px 90px
 
   // background-color: rgba(255, 255, 255, 0.14)
+
+
   background-color: rgba(247, 221, 0, 0.7)
   border-radius: 0 20px 0 20px
   box-shadow: 2px 2px 2px #222
@@ -64,17 +70,29 @@ body
       border-color: #333
       background-color: rgba(255, 255, 255, 0.24)
 
+  // option.button.Small
+    // color: red
+  .button,input[type='button']
+    background-color: rgba(200,200,200,.5)
+    border: 0.1rem solid #9b4dca
+    border-radius: .4rem
+    color: #222
+    border: 1px solid #fff
+    &#del,&#clear
+      color: white
 
   .buttons
     +fx
     +fx_col
+    color: #fff
 
     .att
       font-size: 0.8em
       text-align: center
-      color: white
+      color: whitesass
       margin: (-5px) 0 0 0
       line-height: 1.2
+
 
   button#new
     width: 110px
