@@ -281,8 +281,8 @@ textarea {
   color: #234;
   border: 2px solid #fff;
   border-radius: 0 15px 0 15px;
-  box-shadow: 2px 2px 4px #444;
-  overflow-x: hidden; }
+  box-shadow: 2px 2px 4px;
+  scrollbar-width: thin; }
 
 .selected:hover,
 .sticky:hover {
@@ -305,7 +305,8 @@ textarea {
   padding: 5px 10px;
   color: #234;
   border: none;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  scrollbar-width: thin; }
 
 select {
   font-size: 1.8rem;
@@ -326,7 +327,8 @@ select {
   border-color: rgba(255, 255, 255, 0.89); }
 
 textarea.makeText {
-  height: 95%; }
+  height: 95%;
+  scrollbar-width: thin; }
 
 .sticky.ui-draggable.selected:hover, .sticky.ui-draggable:hover {
   box-shadow: 4px 4px 8px #333; }
